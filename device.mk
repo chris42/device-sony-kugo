@@ -103,6 +103,13 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.sf.lcd_density=320 \
     ro.usb.pid_suffix=1E8
 
+# Add audio properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.audio_hal.period_size=192 \
+    vendor.audio_hal.in_period_size=144 \
+    vendor.audio_hal.period_multiplier=3 \
+    vendor.audio.adm.buffering.ms=4
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/sony/loire/platform.mk)
 
